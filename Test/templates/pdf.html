@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <style>
+        * {
+            font-size: 15px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        table th {
+            text-align: left;
+            padding: 3px;
+            padding-bottom: 0;
+        }
+
+        table td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 3px;
+            padding-bottom: 0;
+        }
+
+        #sno {
+            width: 10%;
+        }
+
+        #roll_no {
+            width: 30%;
+        }
+
+        #name {
+            width: 40%;
+            text-align: left;
+        }
+
+        #score {
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>S No </th>
+            <th> Name </th>
+            <th> Roll No </th>
+            <th> Score </th>
+        </tr>
+        {%for data in record%}
+        <tr>
+            <td id="sno"> {{forloop.counter}} </td>
+            <td id="name"> {{data.name|title}} </td>
+            <td id="roll_no"> {{data.roll_no}} </td>
+            <td id="score"> {{data.score}} </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>
